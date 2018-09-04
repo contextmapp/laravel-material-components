@@ -117,6 +117,7 @@ Parameters:
 * `id`: __required__ - The dialog ID to refer to when interacting with the dialog
 * `action`: The endpoint for the form to submit to
 * `method`: The HTTP method to use when submitting the form (you can override this with a specific action button)
+* `scroll`: Flag to indicate the dialog body is scrollable (default: `false`)
 
 #### Dialog actions
 

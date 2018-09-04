@@ -22,5 +22,6 @@ class MdcDialog
         }
 
         $view->with('action', isset($view->action) ? $view->action : '#');
+        $view->with('scroll', isset($view->scroll) ? $view->scroll : false);
     }
 }
