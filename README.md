@@ -55,23 +55,43 @@ Component: `mdc::button`
 
 Example:
 ```blade
-@component('mdc::button', ['type' => 'submit'])
-    @slot('icon', 'add')
+@component('mdc::button', ['type' => 'submit', 'icon' => 'add'])
     Button label
 @endcomponent
 ```
 
 Slots:
-* Default: populates the button label
+* Default: the button label
 
 Parameters:
 * `type`: The type of button (values: `button`, `submit`, `link`, default: `button`)
-* `url`: The URL to point the button to (required when type is `link`)
+* `url`: The URL to link the button to (required when type is `link`)
 * `icon`: The name of the icon to add to the button
-* `iconClass`: The class to apply to button icon (defaults to `material-icons`)
+* `iconClass`: The class to apply to button icon (default: `material-icons`)
 * `method`: The `_method` field value for when the button is activated
 * `form`: The <form> you want to target with the button (if the button is outside the form)
 * `variant`: The Material Design spec button variant (allowed: `unelevated`, `raised`, `outlined`, `dense`, default: none)
+
+#### Floating Action Button
+
+Component: `mdc::fab`
+
+Example:
+```blade
+@component('mdc::fab', ['icon' => 'person_add'])
+    Add user
+@endcomponent
+```
+
+Slots:
+* Default: the button label
+
+Parameters:
+* `url`: The URL to link the FAB to
+* `icon`: __required__ - The name of the icon for the FAB
+* `iconClass`: The class to apply to the button icon (default: `material-icons`)
+* `extended`: Toggle the extended FAB variant (default: `false`)
+* `mini`: Toggle the mini FAB variant (default: `false`)
 
 ### Cards
  
