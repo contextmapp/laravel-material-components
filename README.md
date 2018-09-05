@@ -286,7 +286,19 @@ Component: *TODO*
 
 #### Switches
 
-Component: *TODO*
+Component: `mdc::switch`
+
+Example:
+```blade
+@component('mdc::switch', ['field' => 'auto_update'])
+    Update automatically
+@endcomponent
+```
+
+Parameters:
+* `valueOn`: The value to submit when the checkbox is checked (default: `1`)
+* `valueOff`: The value to submit when the checkbox is unchecked (default: `0`)
+* `checked`: Set the checked state of the checkbox. (default: determined automatically from the `value` field)
 
 #### Text Field 
 

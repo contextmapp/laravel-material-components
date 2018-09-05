@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Form field component
 - Radio control (#3)
 - Floating Action Button component (#7)
+- Switch control (#5)
 
 ## [0.1.1] - 2018-09-05
 ### Fixed
