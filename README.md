@@ -69,7 +69,7 @@ Parameters:
 * `icon`: The name of the icon to add to the button
 * `iconClass`: The class to apply to button icon (default: `material-icons`)
 * `method`: The `_method` field value for when the button is activated
-* `form`: The <form> you want to target with the button (if the button is outside the form)
+* `form`: The form ID you want to target with the button (if the button is outside the form)
 * `variant`: The Material Design spec button variant (allowed: `unelevated`, `raised`, `outlined`, `dense`, default: none)
 
 #### Floating Action Button
