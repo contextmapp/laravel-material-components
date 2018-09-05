@@ -1,6 +1,9 @@
 <header class="mdc-toolbar" data-mdc-auto-init="MDCToolbar">
     <div class="mdc-toolbar__row">
         @component('mdc::toolbar.section', ['align' => 'start'])
+            @isset($up)
+                {{ $up }}
+            @endisset
             @component('mdc::toolbar.title')
                 {{ $slot }}
             @endcomponent

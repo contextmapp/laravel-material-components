@@ -351,11 +351,31 @@ Example:
 
 Slots:
 * Default: The toolbar title
-* `actions`: The contents of the end-aligned toolbar section
+* `up`: The slot for the upward navigation action on the toolbar, used for the `mdc::toolbar.menu-action` component in most cases
+* `actions`: The contents of the end-aligned toolbar section, used with `mdc::toolbar.action` components in most cases
 
 Parameters:
 
 _This component has no parameters_
+
+#### Toolbar menu action
+
+Component: `mdc::toolbar.menu-action`
+
+Example:
+```blade
+@component('mdc::toolbar.menu-action', ['url' => url('/'), 'icon' => 'arrow_back'])
+    Return to index
+@endcomponent
+```
+
+Slots:
+* Default: the label for the toolbar action
+
+Parameters:
+* `icon`: __required__ - The icon to use on the toolbar action
+* `iconClass`: The icon class for the toolbar action (default: `material-icons`) 
+* `url`: The URL for the toolbar action
 
 #### Toolbar action
 
@@ -364,7 +384,7 @@ Component: `mdc::toolbar.action`
 Example:
 ```blade
 @component('mdc::toolbar.action', ['url' => url('/search'), 'icon' => 'search'])
-Search
+    Search
 @endcomponent
 ```
 
