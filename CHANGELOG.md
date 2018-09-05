@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Text field helper text component
 - Form field component
 - Radio control (#3)
+- Floating Action Button component (#7)
 
 ## [0.1.1] - 2018-09-05
 ### Fixed
