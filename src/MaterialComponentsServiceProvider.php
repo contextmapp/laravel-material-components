@@ -24,6 +24,7 @@ class MaterialComponentsServiceProvider extends ServiceProvider
         ViewComposers\MdcInput::class => 'mdc::select',
         ViewComposers\MdcList::class => 'mdc::list',
         ViewComposers\MdcListItem::class => 'mdc::list.item',
+        ViewComposers\MdcRadio::class => 'mdc::radio',
         ViewComposers\MdcTextField::class => 'mdc::text-field',
         ViewComposers\MdcTextFieldHelperText::class => 'mdc::text-field.helper-text',
         ViewComposers\MdcToolbarSection::class => 'mdc::toolbar.section',
