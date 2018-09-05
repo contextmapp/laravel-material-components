@@ -6,6 +6,8 @@
             name="{{ $field }}"
             id="{{ $id }}"
             value="{{ $valueOn }}"
+            aria-describedby="{{ $id }}-validation"
+            aria-controls="{{ $id }}-validation"
             @if($checked) checked @endif
             class="mdc-checkbox__native-control">
         <div class="mdc-checkbox__background">
@@ -21,11 +23,7 @@
     <label for="{{ $id }}">{{ $label }}</label>
 </div>
 @if($errors->has($dotName))
-    <p
-        id="{{ $id }}-validation"
-        class="mdc-text-field-helper-text mdc-text-field-helper-text--validation-msg"
-        data-mdc-auto-init="MDCTextFieldHelperText">
+    @component('mdc::text-field.helper-text', ['id' => "{$id}-validation", 'validation' => true])
         {{ $errors->first($dotName) }}
-    </p>
+    @endcomponent
 @endif
-
