@@ -328,7 +328,7 @@ You'll mostly won't use this component directly, as it is included with the othe
 
 Example:
 ```blade
-@component('mdc::text-field.helper-text', ['id' => 'file-picker-description')
+@component('mdc::text-field.helper-text', ['id' => 'file-picker-description'])
     Choose a square image, at least 250px wide
 @endcomponent
 ```
