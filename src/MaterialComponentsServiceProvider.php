@@ -20,6 +20,7 @@ class MaterialComponentsServiceProvider extends ServiceProvider
         ViewComposers\MdcButton::class => 'mdc::button',
         ViewComposers\MdcCheckbox::class => 'mdc::checkbox',
         ViewComposers\MdcDialog::class => 'mdc::dialog',
+        ViewComposers\MdcFab::class, 'mdc::fab',
         ViewComposers\MdcFormField::class => 'mdc::form-field',
         ViewComposers\MdcInput::class => 'mdc::select',
         ViewComposers\MdcList::class => 'mdc::list',
