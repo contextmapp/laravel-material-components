@@ -221,7 +221,21 @@ Parameters:
 
 #### Radios
 
-Component: *TODO*
+Component: `mdc::radio`
+
+Example:
+```blade
+@component('mdc::radio', ['field' => 'season', 'value' => 'winter', 'checked' => true])
+    Winter
+@endcomponent
+@component('mdc::radio', ['field' => 'season', 'value' => 'summer'])
+    Summer
+@endcomponent
+```
+
+Parameters:
+* `value`: __required__ - The value to set when selected
+* `checked`: Mark the option as selected
 
 #### Select 
 
