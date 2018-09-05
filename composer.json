@@ -9,8 +9,8 @@
   ],
   "require": {
     "php": "^7.0",
-    "illuminate/support": "5.1 - 5.6",
-    "illuminate/view": "5.1 - 5.6"
+    "illuminate/support": "5.4 - 5.7",
+    "illuminate/view": "5.4 - 5.7"
   },
   "autoload": {
     "psr-4": {
