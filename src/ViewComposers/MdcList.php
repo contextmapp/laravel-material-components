@@ -15,29 +15,21 @@ use Illuminate\Contracts\View\View;
 
 class MdcList
 {
+    use Concerns\HasFlagClasses;
+
     const CLASS_ROOT = 'mdc-list';
     const CLASS_AVATAR_LIST = 'mdc-list--avatar-list';
     const CLASS_TWO_LINE_LIST = 'mdc-list--two-line';
     const CLASS_DENSE_LIST = 'mdc-list--dense';
     const CLASS_NON_INTERACTIVE_LIST = 'mdc-list--non-interactive';
 
-    private $flags = [
-        'avatars' => self::CLASS_AVATAR_LIST,
-        'two_line' => self::CLASS_TWO_LINE_LIST,
-        'dense' => self::CLASS_DENSE_LIST,
-        'non_interactive' => self::CLASS_NON_INTERACTIVE_LIST,
-    ];
-
     public function compose(View $view)
     {
-        $classes = [static::CLASS_ROOT];
-
-        foreach ($this->flags as $property => $class) {
-            if (isset($view[$property]) && $view[$property]) {
-                $classes[] = $class;
-            }
-        }
-
-        $view->with('className', implode(' ', $classes));
+        $this->setClassName($view, self::CLASS_ROOT, [
+            'avatars' => self::CLASS_AVATAR_LIST,
+            'two_line' => self::CLASS_TWO_LINE_LIST,
+            'dense' => self::CLASS_DENSE_LIST,
+            'non_interactive' => self::CLASS_NON_INTERACTIVE_LIST,
+        ]);
     }
 }

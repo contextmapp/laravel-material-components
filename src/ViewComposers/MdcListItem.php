@@ -16,6 +16,8 @@ use Illuminate\Support\HtmlString;
 
 class MdcListItem
 {
+    use Concerns\HasFlagClasses;
+
     const CLASS_ROOT = 'mdc-list-item';
     const CLASS_SELECTED = 'mdc-list-item--selected';
     const CLASS_ACTIVATED = 'mdc-list-item--activated';
@@ -26,11 +28,6 @@ class MdcListItem
 
     const TEXT_PRIMARY = '<span class="mdc-list-item__primary-text">%s</span>';
     const TEXT_SECONDARY = '<span class="mdc-list-item__secondary-text">%s</span>';
-
-    private $flags = [
-        'selected' => self::CLASS_SELECTED,
-        'activated' => self::CLASS_ACTIVATED,
-    ];
 
     public function compose(View $view)
     {
@@ -60,14 +57,9 @@ class MdcListItem
             $view->with('slot', new HtmlString($slot));
         }
 
-        $classes = [static::CLASS_ROOT];
-
-        foreach ($this->flags as $property => $class) {
-            if (isset($view[$property]) && $view[$property]) {
-                $classes[] = $class;
-            }
-        }
-
-        $view->with('className', implode(' ', $classes));
+        $this->setClassName($view, self::CLASS_ROOT, [
+            'selected' => self::CLASS_SELECTED,
+            'activated' => self::CLASS_ACTIVATED,
+        ]);
     }
 }

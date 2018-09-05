@@ -15,27 +15,19 @@ use Illuminate\Contracts\View\View;
 
 class MdcSwitch extends MdcCheckbox
 {
+    use Concerns\HasFlagClasses;
+
     const CLASS_ROOT = 'mdc-switch';
     const CLASS_DISABLED = 'mdc-switch--disabled';
     const CLASS_CHECKED = 'mdc-switch--checked';
-
-    private $flags = [
-        'disabled' => self::CLASS_DISABLED,
-        'checked' => self::CLASS_CHECKED
-    ];
 
     public function compose(View $view)
     {
         parent::compose($view);
 
-        $classes = [self::CLASS_ROOT];
-
-        foreach ($this->flags as $property => $class) {
-            if (isset($view[$property]) && $view[$property]) {
-                $classes[] = $class;
-            }
-        }
-
-        $view->with('className', implode(' ', $classes));
+        $this->setClassName($view, self::CLASS_ROOT, [
+            'disabled' => self::CLASS_DISABLED,
+            'checked' => self::CLASS_CHECKED
+        ]);
     }
 }
