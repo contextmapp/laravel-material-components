@@ -250,6 +250,27 @@ Parameters:
 * `iconPlacement`: Where to place the icon (allowed: `leading`, `trailing`, default: `leading`)
 * `help`: The help text for the text field
 
+##### Text Field Helper Text
+
+Component: `mdc::text-field.helper-text`
+
+You'll mostly won't use this component directly, as it is included with the other input controls by default.
+
+Example:
+```blade
+@component('mdc::text-field.helper-text', ['id' => 'file-picker-description')
+    Choose a square image, at least 250px wide
+@endcomponent
+```
+
+Slots:
+* Default: the help text to display
+
+Parameters:
+* `id`: __required__ - The ID to use for `aria-describedby` and `aria-controls` on the text field
+* `persistent`: Flag to make help text permanently visible
+* `validation`: Flag to indicate help text is validation message
+
 ### Lists
  
 Components: `mdc::list`

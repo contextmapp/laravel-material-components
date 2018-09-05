@@ -47,12 +47,12 @@
     @endif
 </div>
 @isset($help)
-    <p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent">{{ $help }}</p>
+    @component('mdc::text-field.helper-text', ['id' => "{$id}-help", 'persistent' => true])
+        {{ $help }}
+    @endcomponent
 @endisset
 @if($errors->has($dotName))
-    <p
-        id="{{ $id }}-validation"
-        class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg">
+    @component('mdc::text-field.helper-text', ['id' => "{$id}-validation", 'validation' => true])
         {{ $errors->first($dotName) }}
-    </p>
+    @endcomponent
 @endif
