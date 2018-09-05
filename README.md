@@ -195,6 +195,30 @@ Parameters:
 * `valueOff`: The value to submit when the checkbox is unchecked (default: `0`)
 * `checked`: Set the checked state of the checkbox. (default: determined automatically from the `value` field)
 
+#### Form field
+
+Component: `mdc::form-field`
+
+You'll mostly won't use this component directly, as it is included with the other input controls by default.
+
+Example:
+```blade
+@component('mdc::form-field', ['id' => 'my-checkbox'])
+    {{-- Some control --}}
+    @slot('label')
+        A label for the control
+    @endslot
+@endcomponent
+```
+
+Slots:
+* Default: the input control
+* `label`: the input label
+
+Parameters:
+* `id`: __required__ - The ID of the input control
+* `align_end`: Flag to move the input control to the end of the form field
+
 #### Radios
 
 Component: *TODO*
