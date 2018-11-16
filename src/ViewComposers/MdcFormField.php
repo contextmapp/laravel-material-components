@@ -11,14 +11,20 @@
 
 namespace Contextmapp\MaterialComponents\ViewComposers;
 
+use Illuminate\Contracts\View\Composer;
 use Illuminate\Contracts\View\View;
 
-class MdcFormField
+class MdcFormField implements Composer
 {
     use Concerns\HasFlagClasses;
 
     const CLASS_ROOT = 'mdc-form-field';
     const CLASS_ALIGN_END = 'mdc-form-field--align-end';
+
+    public static function views(): array
+    {
+        return ['mdc::form-field'];
+    }
 
     public function compose(View $view)
     {

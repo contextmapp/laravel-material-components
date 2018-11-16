@@ -11,9 +11,10 @@
 
 namespace Contextmapp\MaterialComponents\ViewComposers;
 
+use Illuminate\Contracts\View\Composer;
 use Illuminate\Contracts\View\View;
 
-class MdcList
+class MdcList implements Composer
 {
     use Concerns\HasFlagClasses;
 
@@ -22,6 +23,11 @@ class MdcList
     const CLASS_TWO_LINE_LIST = 'mdc-list--two-line';
     const CLASS_DENSE_LIST = 'mdc-list--dense';
     const CLASS_NON_INTERACTIVE_LIST = 'mdc-list--non-interactive';
+
+    public static function views(): array
+    {
+        return ['mdc::list'];
+    }
 
     public function compose(View $view)
     {

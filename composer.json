@@ -14,7 +14,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Contextmapp\\MaterialComponents\\": "src/"
+      "Contextmapp\\MaterialComponents\\": "src/",
+      "Illuminate\\Support\\Contracts\\": "src/Contracts"
     }
   },
   "config": {

@@ -11,15 +11,21 @@
 
 namespace Contextmapp\MaterialComponents\ViewComposers;
 
+use Illuminate\Contracts\View\Composer;
 use Illuminate\Contracts\View\View;
 
-class MdcFab
+class MdcFab implements Composer
 {
     use Concerns\HasFlagClasses;
 
     const CLASS_ROOT = 'mdc-fab';
     const CLASS_EXTENDED = 'mdc-fab--extended';
     const CLASS_MINI = 'mdc-fab--mini';
+
+    public static function views(): array
+    {
+        return ['mdc::fab'];
+    }
 
     public function compose(View $view)
     {

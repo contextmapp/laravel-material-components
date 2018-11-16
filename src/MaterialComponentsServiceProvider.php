@@ -17,10 +17,10 @@ use Illuminate\Support\ServiceProvider;
 class MaterialComponentsServiceProvider extends ServiceProvider
 {
     private $composers = [
-        ViewComposers\MdcButton::class => 'mdc::button',
-        ViewComposers\MdcCheckbox::class => 'mdc::checkbox',
-        ViewComposers\MdcDialog::class => 'mdc::dialog',
-        ViewComposers\MdcFab::class, 'mdc::fab',
+        ViewComposers\MdcButton::class,
+        ViewComposers\MdcCheckbox::class,
+        ViewComposers\MdcDialog::class,
+        ViewComposers\MdcFab::class,
         ViewComposers\MdcFormField::class => 'mdc::form-field',
         ViewComposers\MdcInput::class => 'mdc::select',
         ViewComposers\MdcList::class => 'mdc::list',

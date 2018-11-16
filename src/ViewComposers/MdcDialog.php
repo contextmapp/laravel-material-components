@@ -11,10 +11,16 @@
 
 namespace Contextmapp\MaterialComponents\ViewComposers;
 
+use Illuminate\Contracts\View\Composer;
 use Illuminate\Contracts\View\View;
 
-class MdcDialog
+class MdcDialog implements Composer
 {
+    public static function views(): array
+    {
+        return ['mdc::dialog'];
+    }
+
     public function compose(View $view)
     {
         if (false === isset($view->id)) {

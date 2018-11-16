@@ -11,10 +11,11 @@
 
 namespace Contextmapp\MaterialComponents\ViewComposers;
 
+use Illuminate\Contracts\View\Composer;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\HtmlString;
 
-class MdcListItem
+class MdcListItem implements Composer
 {
     use Concerns\HasFlagClasses;
 
@@ -28,6 +29,11 @@ class MdcListItem
 
     const TEXT_PRIMARY = '<span class="mdc-list-item__primary-text">%s</span>';
     const TEXT_SECONDARY = '<span class="mdc-list-item__secondary-text">%s</span>';
+
+    public static function views(): array
+    {
+        return ['mdc::list.item'];
+    }
 
     public function compose(View $view)
     {

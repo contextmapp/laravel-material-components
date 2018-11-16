@@ -11,10 +11,16 @@
 
 namespace Contextmapp\MaterialComponents\ViewComposers;
 
+use Illuminate\Contracts\View\Composer;
 use Illuminate\Contracts\View\View;
 
-class MdcButton
+class MdcButton implements Composer
 {
+    public static function views(): array
+    {
+        return ['mdc::button'];
+    }
+
     public function compose(View $view)
     {
         if (!isset($view->slot)) {

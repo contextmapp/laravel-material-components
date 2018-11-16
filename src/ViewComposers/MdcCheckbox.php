@@ -11,10 +11,16 @@
 
 namespace Contextmapp\MaterialComponents\ViewComposers;
 
+use Illuminate\Contracts\View\Composer;
 use Illuminate\Contracts\View\View;
 
-class MdcCheckbox extends MdcInput
+class MdcCheckbox extends MdcInput implements Composer
 {
+    public static function views(): array
+    {
+        return ['mdc::checkbox'];
+    }
+
     public function compose(View $view)
     {
         parent::compose($view);
